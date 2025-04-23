@@ -1,4 +1,4 @@
-# Sistema de venta de billetes de avión
+# Sistema de venta de billetes de avión 1
 
 class Vuelo:
     def __init__(self, numero_vuelo, origen, destino, fecha, salida, llegada, precio):
@@ -61,13 +61,13 @@ def main():
         mostrar_vuelos_disponibles(vuelos)
     elif opcion == '2':
         #extraer método
-        n = input("Ingrese su nombre: ")
-        a = input("Ingrese su apellido: ")
-        e = int(input("Ingrese su edad: "))
-        t = input("Ingrese su número de teléfono: ")
-        c = input("Ingrese su correo electrónico: ")
+        nombre = input("Ingrese su nombre: ")
+        apellido = input("Ingrese su apellido: ")
+        edad = int(input("Ingrese su edad: "))
+        num_telefono = input("Ingrese su número de teléfono: ")
+        correo = input("Ingrese su correo electrónico: ")
 
-        pasajero = Pasajero(n, a, e, t, c)
+        pasajero = Pasajero(nombre, apellido, edad, num_telefono, correo)
 
         #extraer método
         numero = input("Ingrese el número de vuelo que desea reservar: ")
