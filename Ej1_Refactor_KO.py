@@ -49,7 +49,10 @@ def reservar_vuelo(lista, numero_vuelo, pasajero, cantidad):
 def obtener_datos_cliente(nombre, apellido, edad, num_telefono, correo):
     return Pasajero(nombre, apellido, edad, num_telefono, correo)
 
-
+def obtener_datos_vuelo():
+    numero = input("Ingrese el número de vuelo que desea reservar: ")
+    cantidad = int(input("Ingrese la cantidad de asientos que desea reservar (máximo 10): "))
+    return numero,cantidad
 
 
 def main():
@@ -66,12 +69,13 @@ def main():
         mostrar_vuelos_disponibles(vuelos)
     elif opcion == '2':
         pasajero = obtener_datos_cliente(input("Ingrese su nombre: "), input("Ingrese su apellido: "), int(input("Ingrese su edad: ")), input("Ingrese su número de teléfono: "), input("Ingrese su correo electrónico: "))
-        numero = input("Ingrese el número de vuelo que desea reservar: ")
-        cantidad = int(input("Ingrese la cantidad de asientos que desea reservar (máximo 10): "))
+        numero, cantidad = obtener_datos_vuelo()
 
         reservar_vuelo(vuelos, numero, pasajero, cantidad)
     else:
         print("Opción no válida.")
+
+
 
 if __name__ == "__main__":
     main()
