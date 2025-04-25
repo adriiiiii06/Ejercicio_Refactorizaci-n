@@ -1,13 +1,13 @@
 # Sistema de venta de billetes de avión 1
 
 class Vuelo:
-    def __init__(self, numero_vuelo, origen, destino, fecha, salida, llegada, precio):
+    def __init__(self, numero_vuelo, origen, destino, fecha, hora_salida, hora_llegada, precio):
         self.numero_vuelo = numero_vuelo
         self.origen = origen
         self.destino = destino
         self.fecha = fecha
-        self.salida = salida
-        self.llegada = llegada
+        self.hora_salida = hora_salida
+        self.hora_llegada = hora_llegada
         self.precio = precio
 
 class Pasajero:
@@ -46,6 +46,11 @@ def reservar_vuelo(lista, numero_vuelo, pasajero, cantidad):
                 return
     print("No se encontró ningún vuelo con el número especificado.")
 
+def obtener_datos_cliente(nombre, apellido, edad, num_telefono, correo):
+    return Pasajero(nombre, apellido, edad, num_telefono, correo)
+
+
+
 
 def main():
     vuelos = [
@@ -60,16 +65,7 @@ def main():
     if opcion == '1':
         mostrar_vuelos_disponibles(vuelos)
     elif opcion == '2':
-        #extraer método
-        nombre = input("Ingrese su nombre: ")
-        apellido = input("Ingrese su apellido: ")
-        edad = int(input("Ingrese su edad: "))
-        num_telefono = input("Ingrese su número de teléfono: ")
-        correo = input("Ingrese su correo electrónico: ")
-
-        pasajero = Pasajero(nombre, apellido, edad, num_telefono, correo)
-
-        #extraer método
+        pasajero = obtener_datos_cliente(input("Ingrese su nombre: "), input("Ingrese su apellido: "), int(input("Ingrese su edad: ")), input("Ingrese su número de teléfono: "), input("Ingrese su correo electrónico: "))
         numero = input("Ingrese el número de vuelo que desea reservar: ")
         cantidad = int(input("Ingrese la cantidad de asientos que desea reservar (máximo 10): "))
 
